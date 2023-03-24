@@ -61,7 +61,7 @@ world_list = input_text.split()
 len_world_list_endswith_о = []
 
 for world in world_list:
-    if world.lower().endswith('о'):
+    if world.lower().strip('.,:;-)!?').endswith('о'):
         len_world_list_endswith_о.append(world)
 
 list_len = len(len_world_list_endswith_о)

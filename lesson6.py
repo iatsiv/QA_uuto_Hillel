@@ -7,11 +7,14 @@ c. В будь-якому іншому випадку - функція пове�
 з двох агрументів'''
 
 
-data1 = 'цифри:'
-data2 = 2, 5, 3, 5, 5.3
+
+data1 = False
+data2 = True
 
 def fun_math(data1, data2):
-    if isinstance(data1, (int, float)) and isinstance(data2, (int, float)):
+    if isinstance(data1, (int, bool)) and isinstance(data2, (int, bool)):
+        result = (data1, data2)
+    elif isinstance(data1, (int, float)) and isinstance(data2, (int, float)):
         result = data1 * data2
     elif isinstance(data1, str) and isinstance(data2, str):
         result = data1 + data2

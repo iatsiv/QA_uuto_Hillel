@@ -9,7 +9,7 @@ def what_season(input_data):
     '''
     Returns the name of the season based on the date
     :param input_day: str in format 'dd.mm'
-    :return: str, season
+    :return: str, None, error messages
     '''
 
     try:
@@ -51,7 +51,7 @@ def stupid_calc(num_1, num_2, operation):
     :param num_1: numbers
     :param num_2: numbers
     :param operation: str
-    :return: int or float
+    :return: int or float, None, error messages
     '''
 
     if not isinstance(num_1, (int, float)) \

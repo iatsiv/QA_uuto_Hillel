@@ -18,14 +18,14 @@ def time_func_decorator(func_to_decor):
         end_time = monotonic_ns()
         total_time = end_time - start_time
         print(f'Function "{func_to_decor.__name__}" \
-finished in {total_time} nanoseconds with result "{func_to_decor(*args)}"')
+finished in {total_time} nanoseconds')
         return total_time
 
     return _wrapper
 
 
 what_season = time_func_decorator(what_season)
-what_season('10.09')
+what_season('10.29')
 
 stupid_calc = time_func_decorator(stupid_calc)
-stupid_calc(2, 1, '/')
+stupid_calc(2, "", '/')

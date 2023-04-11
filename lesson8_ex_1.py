@@ -19,6 +19,7 @@ def time_func_decorator(func_to_decor):
         total_time = end_time - start_time
         print(f'Function "{func_to_decor.__name__}" \
 finished in {total_time} nanoseconds with result "{func_to_decor(*args)}"')
+        return total_time
 
     return wrapper
 

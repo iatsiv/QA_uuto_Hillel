@@ -12,7 +12,7 @@ def time_func_decorator(func_to_decor):
     :param func_to_decor:
     :return: wrapped func_to_decor
     '''
-    def wrapper(*args, **kwargs):
+    def _wrapper(*args, **kwargs):
         start_time = monotonic_ns()
         func_to_decor(*args, **kwargs)
         end_time = monotonic_ns()
@@ -21,11 +21,11 @@ def time_func_decorator(func_to_decor):
 finished in {total_time} nanoseconds with result "{func_to_decor(*args)}"')
         return total_time
 
-    return wrapper
+    return _wrapper
 
 
 what_season = time_func_decorator(what_season)
-what_season('10.02')
+what_season('10.09')
 
 stupid_calc = time_func_decorator(stupid_calc)
-stupid_calc(2, 3, '/')
+stupid_calc(2, 1, '/')

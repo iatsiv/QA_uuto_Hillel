@@ -1,0 +1,84 @@
+Завдання
+
+--------------------------------------------------------
+Написати 50 селекторів для пошуку єлементів на вибраному вамі сайті
+Використовувати різні атрібути пошуку (Xpath, CSS selectors),
+та пошук по різним атрібутам (@class, @id, @what_ever_you_can_find_in_attributes)
+Хочаб 5 раз використати пошук по text().
+--------------------------------------------------------
+
+Досліджуємо локатори на https://ithillel.ua/:
+
+--------------------------------------------------------
+
+-----  Xpath_text()   -----
+1 //*[text()='Оплата онлайн']
+2 //*[text()='Гарантія повернення оплати']
+3 //li[@class='site-nav-dropdown_item']//*[text()='Корпоративне навчання']
+4 //li[@class='site-nav-dropdown_item']//a[contains(text(), 'Корпоратив')]
+5 (//span[text()='Курс'])[2] #за індексом не дуже ок, але якщо в нас ГІПОТЕТИЧНО кілька однотипних елементів і жоден не має унікальних атрибутів, то напевно це допустимо.
+
+-----  Xpath_@class   -----
+6 //li[@class='studying-list_item'][4]
+7 //li[@class='studying-list_item'][1]//*[name()='svg']
+8 //section[@class='section -hero -offline']
+9 //div[@class='hcw-widget-button-label__text']
+10 //a[@class='header-bar-link -active']
+
+----- Xpath_@id  -----
+11 //*[@id='btn-consultation-hero']
+12 //div[@id='coursesMenuSearchField']
+13 //div[@id='field-email-mailing']
+14 //input[@id='input-email-mailing']
+15 //textarea[@id='helpcrunchChatTextarea'] #динамічно завантажується(клік по чату)
+
+@what_ever_you_can_find_in_attribute
+16 //a[@data-city-id='kv']
+17 //span[@href='https://online.ithillel.ua']
+18 //div[@class="widget-gift-certificate_body"]/button[@type='button']
+19 //a[@href='https://evo.company/']
+20 //button[@data-modal='become-coach']
+21 //div[@class='coach-photo_placeholder']//img[@alt='Ханна Янкіна'] #порядок списку викладачів може змінитись
+22 //button[@data-category='marketing']
+23 //img[@src='https://ucarecdn.com/0d9199fd-06b4-4623-9163-506a82464be9/-/scale_crop/80x80/center/'] #динамічно довантажується - клік по чату
+24 //*[@class="advantages-video_icon"]
+25 //button[@class='hcw-header-button _back']//*[name()='svg']
+
+----
+
+-----  CSS_selectors   -----
+1 .block-cashback_item:nth-child(2) h3
+2 .block-cashback_item:nth-child(3) h3
+3 .site-nav-dropdown_item [href="https://online.ithillel.ua/corp-ed"]
+4 .site-nav-dropdown_item [href="https://certificate.ithillel.ua"]
+5 [style="height: 236px; transform: translate3d(-1130px, 0px, 0px); transition-duration: 250ms;"]
+
+-----  CSS_selectors_@class   -----
+6 li.studying-list_item:nth-of-type(4)
+7 li.studying-list_item:first-child svg
+8 section.section.-hero.-offline
+9 div.hcw-widget-button-label__text
+10 a.header-bar-link.-active
+
+----- CSS_selectors_@id -----
+11 #btn-consultation-hero
+12 [id="coursesMenuSearchField"]
+13 div#field-email-mailing
+14 input#input-email-mailing
+15 textarea#helpcrunchChatTextarea #динамічно завантажується(клік по чату)
+
+CSS_selectors_@what_ever_you_can_find_in_attributes
+16 a[data-city-id='kv']
+17 span[href='https://online.ithillel.ua']
+18 .widget-gift-certificate_body button[type='button']
+19 a[href='https://evo.company/']
+20 button[data-modal='become-coach']
+21 .coach-photo_placeholder img[alt='Ханна Янкіна'] #порядок списку викладачів може змінитись
+22 button[data-category='marketing']
+23 img[src='https://ucarecdn.com/0d9199fd-06b4-4623-9163-506a82464be9/-/scale_crop/80x80/center/'] #динамічно довантажується - клік по чату
+24 .advantages-video_icon
+25 button.hcw-header-button._back svg
+
+
+
+

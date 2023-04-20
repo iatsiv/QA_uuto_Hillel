@@ -6,7 +6,8 @@ import library
 testcases_test_filter_cut_string_positive = [
     ('', ''),
     ('@!дSasdU 5С5С E@s@@S_=23wwdSaffsss', 'SUССESS'),
-    ('!@435656fdg@324', '')
+    ('!@435656fdg@324', ''),
+    ('AAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBB', 'AAAAAAAAAAAAAAAAAAAAAAAAA')
 ]
 
 testcases_test_filter_cut_string_negative = [

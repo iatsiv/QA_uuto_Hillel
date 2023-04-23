@@ -27,12 +27,15 @@ def test_auth_positive():
     driver.find_element(By.XPATH, LocatorsConstants.INPUT_PASSWORD)\
         .send_keys(LocatorsConstants.PASSWORD)
     driver.find_element(By.XPATH, LocatorsConstants.BUTTON_LOGIN).click()
-    content_header = driver.find_element(By.XPATH, LocatorsConstants.CONTENT_HEADER)
-    user_name_in_header = driver.find_element(By.XPATH, LocatorsConstants.USER_NAME_IN_HEADER)
+    content_header = driver.find_element(By.XPATH,
+                                         LocatorsConstants.CONTENT_HEADER)
+    user_name_in_header = \
+        driver.find_element(By.XPATH, LocatorsConstants.USER_NAME_IN_HEADER)
 
     assert driver.current_url == LocatorsConstants.URL_AFTER_AUTH, "bad url"
     assert content_header.is_displayed(), "content-header not found"
     assert user_name_in_header.is_displayed(),  "user name wrong or not found"
+
 
 def test_auth_negative():
     driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())

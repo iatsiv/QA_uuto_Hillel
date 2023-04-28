@@ -51,18 +51,18 @@ class Square(Rectangle):
         super().__init__(s, s)
 
 
-t = Triangle(3, 4, 5)
-print(t.perimeter())
-print(t.area())
+triangle = Triangle(3, 4, 5)
+print(triangle.perimeter())
+print(triangle.area())
 
-c = Circle(5)
-print(c.perimeter())
-print(c.area())
+circle = Circle(5)
+print(circle.perimeter())
+print(circle.area())
 
-r = Rectangle(3, 4)
-print(r.perimeter())
-print(r.area())
+rectangle = Rectangle(3, 4)
+print(rectangle.perimeter())
+print(rectangle.area())
 
-s = Square(5)
-print(s.perimeter())
-print(s.area())
+square = Square(5)
+print(square.perimeter())
+print(square.area())

@@ -31,25 +31,22 @@ class TestAuth:
         self.login_page.get_remember_me_button().click()
         self.login_page.get_login_button().click()
 
+
     def setup_method(self):
         self.create_car = CraeteCar(UsersConstants.BRAND_ID, UsersConstants.MODEL_ID, UsersConstants.MILEAGE_SETUP)
         self.session.post(url=UsersConstants.URL_CREATE_CAR, json=self.create_car.__dict__)
 
     def test_car_create(self):
-        time.sleep(1)
         self.driver.get(UsersConstants.URL_GARAGE)
         self.create_car_page.get_create_car_button().click()
-        time.sleep(1)
         assert self.create_car_page.get_add_car_header().is_displayed()
         self.create_car_page.get_mileage_field().send_keys(UsersConstants.MILEAGE)
         self.create_car_page.get_add_button().click()
-        time.sleep(1)
         assert self.create_car_page.get_update_car().is_displayed()
 
     def test_car_edit(self):
         assert self.create_car_page.get_model_car().text == 'Audi TT', "delete current user and repeat"
         self.create_car_page.get_edit_button().click()
-        time.sleep(1)
         self.create_car_page.get_brand_field().click()
         self.create_car_page.get_brand_value_porsh().click()
         self.create_car_page.get_save_button().click()
@@ -57,17 +54,11 @@ class TestAuth:
 
     def test_car_delete(self):
         self.create_car_page.get_edit_button().click()
-        time.sleep(1)
         self.create_car_page.get_remove_button().click()
-        time.sleep(1)
         self.create_car_page.get_remove_finish_button().click()
-        time.sleep(1)
         self.create_car_page.get_edit_button().click()
-        time.sleep(1)
         self.create_car_page.get_remove_button().click()
-        time.sleep(1)
         self.create_car_page.get_remove_finish_button().click()
-        time.sleep(1)
         self.create_car_page.get_ampty_garage().is_displayed()
 
     def teardown_class(self):

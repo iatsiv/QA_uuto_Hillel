@@ -10,6 +10,7 @@ class Driver:
     def get_chrom_driver() -> WebDriver:
         if Driver.driver is None:
             Driver.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
+            Driver.driver.implicitly_wait(10)
             return Driver.driver
         else:
             return Driver.driver

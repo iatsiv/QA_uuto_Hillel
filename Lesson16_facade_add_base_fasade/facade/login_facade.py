@@ -1,6 +1,6 @@
 import allure
 
-from facade_base import FacadeBase
+from .facade_base import FacadeBase
 
 class LoginFacade(FacadeBase):
 

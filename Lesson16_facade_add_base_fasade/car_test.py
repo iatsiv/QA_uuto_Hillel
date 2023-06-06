@@ -11,6 +11,7 @@ from pages.login_page import LoginPage
 from test_base import TestBase
 
 
+
 class TestAuth(TestBase):
 
     def setup_class(self):

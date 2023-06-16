@@ -2,7 +2,7 @@ import asyncio
 
 
 async def show_massage():
-    print(f"Нижче пораховано площу трикутника:")
+    print(f"Нижче пораховано площу фігури:")
 
 def add_unit(unit):
     def decorator(func):
